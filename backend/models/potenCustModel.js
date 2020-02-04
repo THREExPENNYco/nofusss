@@ -37,6 +37,12 @@ const potenCust = new Schema(
       max: 200,
       required: [true, "We really wanna know how we can help."]
     },
+    currsupplier: { 
+      type: String, 
+      min: [10, "Field cannot be empty"], 
+      max: 20, 
+      required: [true, "To really customize the quote we want to know who you currently use"]
+    }, 
     company: {
       type: String, 
       min: 2,

@@ -6,6 +6,7 @@ router.route("/").get((req, res) => {
 })
 
 router.route("/post").post((req, res) => {
+  const currsupplier = req.body.currsupplier; 
   const firstname = req.body.firstname; 
   const lastname = req.body.lastname; 
   const phonenumber = req.body.phonenumber;
@@ -19,7 +20,8 @@ router.route("/post").post((req, res) => {
     phonenumber,
     company, 
     email,
-    message
+    message, 
+    currsupplier
   });
 
   try { 

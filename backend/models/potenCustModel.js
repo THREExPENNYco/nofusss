@@ -38,6 +38,7 @@ const potenCust = new Schema(
       required: [true, "We really wanna know how we can help."]
     },
     company: {
+      type: String, 
       min: 2,
       max: 40,
       trim: true,

@@ -11,11 +11,13 @@ router.route("/post").post((req, res) => {
   const phonenumber = req.body.phonenumber;
   const email = req.body.email;
   const message = req.body.message;
+  const company = req.body.company; 
 
   const newPotenCust = new PotenCustModel({
     firstname,
     lastname, 
     phonenumber,
+    company, 
     email,
     message
   });

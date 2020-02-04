@@ -24,16 +24,10 @@ router.route("/post").post((req, res) => {
     currsupplier
   });
 
-  try { 
   newPotenCust
     .save()
     .then(() => res.json("New Poten Customer Added"))
     .catch(err => res.json(err))
-  } catch(err) { 
-    res.json(err); 
-  } 
-    // .then(() => res.json("New Poten Customer Added"))
-    // .catch(err => res.status(500).json(err));
 });
 
 module.exports = router;

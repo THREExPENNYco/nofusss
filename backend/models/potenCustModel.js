@@ -13,7 +13,7 @@ const potenCust = new Schema(
     lastname: {
       type: String,
       required: [true, "A last name is required"],
-      min: 2,
+      min: 2, 
       max: 40,
       trim: true
     },
@@ -38,11 +38,17 @@ const potenCust = new Schema(
       required: [true, "We really wanna know how we can help."]
     },
     company: {
-      type: String, 
+      type: String,
       min: 2,
       max: 40,
       trim: true,
       required: [true, "A company is required"]
+    },
+    currsupplier: {
+      type: String,
+      required: [true, "Who are you currently purchasing from"],
+      min: 2,
+      max: 40
     },
     phonenumber: {
       type: Number,

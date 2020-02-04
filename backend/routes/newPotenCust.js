@@ -1,9 +1,7 @@
 const router = require("express").Router();
 let PotenCustModel = require("../models/potenCustModel.js");
 
-router.route("/").get((req, res) => { 
-  res.send('hello world'); 
-})
+router.route("/").get(() => {})
 
 router.route("/post").post((req, res) => {
   const currsupplier = req.body.currsupplier; 
@@ -12,7 +10,8 @@ router.route("/post").post((req, res) => {
   const phonenumber = req.body.phonenumber;
   const email = req.body.email;
   const message = req.body.message;
-  const company = req.body.company; 
+  const company = req.body.company;
+  const location = req.body.location; 
 
   const newPotenCust = new PotenCustModel({
     firstname,
@@ -21,7 +20,8 @@ router.route("/post").post((req, res) => {
     company, 
     email,
     message, 
-    currsupplier
+    currsupplier, 
+    location 
   });
 
   newPotenCust

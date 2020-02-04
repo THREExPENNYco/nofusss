@@ -37,6 +37,11 @@ const potenCust = new Schema(
       max: 200,
       required: [true, "We really wanna know how we can help."]
     },
+    location: { 
+      type: String, 
+      required: [true, "We currently only service some locations"], 
+      enum: ['Houston', 'San Antonio', 'Austin']
+    }, 
     currsupplier: { 
       type: String, 
       min: [10, "Field cannot be empty"], 
@@ -51,7 +56,7 @@ const potenCust = new Schema(
       required: [true, "A company is required"]
     },
     phonenumber: {
-      type: Number,
+      type: String,
       trim: true,
       unique: true,
       required: [true, "A phone number is required."],

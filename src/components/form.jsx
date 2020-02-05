@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { startSession, STATES } from "mongoose";
 
 function Form() {
   const [firstName, setFirstName] = useState("");

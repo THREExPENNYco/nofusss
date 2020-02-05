@@ -13,7 +13,7 @@ const potenCust = new Schema(
     lastname: {
       type: String,
       required: [true, "A last name is required"],
-      min: 2, 
+      min: 2,
       max: 40,
       trim: true
     },
@@ -37,21 +37,26 @@ const potenCust = new Schema(
       max: 200,
       required: [true, "We really wanna know how we can help."]
     },
+    location: { 
+      type: String, 
+      required: [true, "We currently only service some locations"], 
+      enum: ['Houston', 'San Antonio', 'Austin']
+    }, 
+    currsupplier: { 
+      type: String, 
+      min: [10, "Field cannot be empty"], 
+      max: 20, 
+      required: [true, "To really customize the quote we want to know who you currently use"]
+    }, 
     company: {
-      type: String,
+      type: String, 
       min: 2,
       max: 40,
       trim: true,
       required: [true, "A company is required"]
     },
-    currsupplier: {
-      type: String,
-      required: [true, "Who are you currently purchasing from"],
-      min: 2,
-      max: 40
-    },
     phonenumber: {
-      type: Number,
+      type: String,
       trim: true,
       unique: true,
       required: [true, "A phone number is required."],

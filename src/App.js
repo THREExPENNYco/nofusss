@@ -27,7 +27,7 @@ class App extends Component {
         <section className="article-main">
           {Object.keys(this.state.snippets).map((snippet, index) => (
             <Snippet
-              id={index}
+              key={index}
               snippet={this.state.snippets[snippet].snippet}
               snippetHead={this.state.snippets[snippet].snippetHead}
             />

@@ -46,7 +46,7 @@ const potenCust = new Schema(
       type: String, 
       min: [10, "Field cannot be empty"], 
       max: 20, 
-      required: [true, "To really customize the quote we want to know who you currently use"]
+      required: [true, "This is required to personalize your quote"]
     }, 
     company: {
       type: String, 

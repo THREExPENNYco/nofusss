@@ -41,7 +41,7 @@ function Form() {
         </label>
         <input
           className="input-container"
-          type="firstname"
+          id="firstname"
           onInput={e => setFirstName(e.target.value)}
         />
         <label className="form-labels" htmlFor="lastname">
@@ -49,7 +49,7 @@ function Form() {
         </label>
         <input
           className="input-container"
-          type="lastname"
+          id="lastname"
           onInput={e => setLastName(e.target.value)}
         />
         <label className="form-labels" htmlFor="email">
@@ -58,6 +58,7 @@ function Form() {
         <input
           className="input-container"
           type="email"
+          id="email"
           onInput={e => setEmail(e.target.value)}
         />
         <label className="form-labels" htmlFor="phonenumber">
@@ -66,6 +67,7 @@ function Form() {
         <input
           className="input-container"
           type="tel"
+          id="phonenumber"
           className="input-container"
           onInput={e => setPhoneNumber(e.target.value)}
         />
@@ -74,36 +76,37 @@ function Form() {
         </label>
         <input
           className="input-container"
-          type="company"
+          id="company"
           onInput={e => setCompany(e.target.value)}
         />
-        <label className="form-labels" type="location">
+        <label className="form-labels" htmlFor="location">
           Location:
         </label>
         <select
           className="input-container"
           value={location}
+          id={location}
           onChange={e => setLocation(e.target.value)}
         >
-          <option></option>
           <option value="Houston">Houston</option>
           <option value="San Antonio">San Antonio</option>
           <option value="Austin">Austin</option>
         </select>
-        <label className="form-labels" type="currsupplier">
+        <label className="form-labels"  htmlFor="currSupplier">
           Current Supplier:
         </label>
         <input
           className="input-container"
-          htmlFor="currsupplier"
+          id="currSupplier"
           onInput={e => setCurrSupplier(e.target.value)}
         />
-        <label className="form-labels" htmlFor="help">
+        <label className="form-labels" htmlFor="message">
           How Can We Help?
         </label>
         <textarea
           className="input-container"
           type="text"
+          id="message"
           onInput={e => setMessage(e.target.value)}
         />
         <input

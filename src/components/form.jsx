@@ -29,12 +29,13 @@ function Form() {
       .then(function(response) {
         if (!response.data.errors) {
           setSent(true);
+          console.log(response.data.name); 
         }
         let resError = response.data.errors;
         setError(resError);
       })
       .catch(function(error) {
-        render(error); 
+        console.log(error); 
       });
   }
 

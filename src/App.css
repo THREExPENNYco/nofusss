@@ -33,6 +33,7 @@ body {
   min-width: 100px;
   max-width: 500px;
   padding-top: 10px;
+  padding-bottom: 25px; 
 }
 
 .form-header {
@@ -210,4 +211,9 @@ hr {
 .example { 
   font-size: 12px;
   color: gray;
+}
+
+footer { 
+  margin-top: 25px; 
+  min-height: 50px; 
 }

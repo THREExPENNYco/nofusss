@@ -25,9 +25,9 @@ body {
   margin-right: auto;
   margin-left: auto;
   background: white;
-  border-radius: 30px;
-  -moz-border-radius: 30px;
-  -webkit-border-radius: 30px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 1);
   min-height: 600px;
   min-width: 100px;
@@ -62,7 +62,7 @@ select.input-container {
   background: #dbdbdb;
   margin-left: auto;
   margin-right: auto;
-  outline: none; 
+  
 }
 
 .input-container:focus {
@@ -88,13 +88,14 @@ select.input-container {
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 25px;
+  border-radius: 5px;
   height: 45px;
   width: 200px;
   border-style: none;
   background-color: #2d6b2c;
   color: white;
   box-shadow: 0px 3px 1px #235021;
+  outline: none
 }
 
 .form-button:hover { 
@@ -185,4 +186,18 @@ hr {
   width: 75%; 
   margin-top: 10px; 
   border-style: dotted;
+}
+
+.thankyou { 
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 2px;
+}
+
+.thankyou > h1 { 
+  margin-bottom: 0px;
+}
+
+.thankyou > h3 {
+  margin-top: 1px;
 }

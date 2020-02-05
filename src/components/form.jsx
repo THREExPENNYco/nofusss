@@ -8,10 +8,12 @@ function Form() {
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [currSupplier, setCurrSupplier] = useState("");
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("Houston");
   const [message, setMessage] = useState("");
+  const [sent, setSent] = useState(false); 
 
   function formSubmit(e) {
+    e.preventDefault(); 
     axios
       .post("http://localhost:3000/post", {
         firstname: firstName,
@@ -24,7 +26,9 @@ function Form() {
         message: message
       })
       .then(function(response) {
-        console.log(response.data);
+        if (!response.data.errors) { 
+          setSent(true); 
+        }  
       })
       .catch(function(error) {
         console.log(error);
@@ -33,7 +37,7 @@ function Form() {
 
   return (
     <div>
-      <form className="form-container">
+      {!sent ? <form className="form-container">
         <h1 className="form-header"> Request A Quote </h1>
         <hr></hr>
         <label className="form-labels" htmlFor="firstname">
@@ -68,7 +72,6 @@ function Form() {
           className="input-container"
           type="tel"
           id="phonenumber"
-          className="input-container"
           onInput={e => setPhoneNumber(e.target.value)}
         />
         <label className="form-labels" htmlFor="company">
@@ -115,8 +118,12 @@ function Form() {
           value="Submit"
           onClick={e => formSubmit(e)}
         />
-      </form>
-    </div>
+      </form> : 
+      <div className="thankyou"> 
+        <h1>{`Thank You, ${firstName}`}</h1>
+        <h3>We will be with you shortly</h3>
+      </div> } 
+    </div>  
   );
 }
 

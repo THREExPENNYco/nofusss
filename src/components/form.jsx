@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function Form() {
@@ -27,38 +27,63 @@ function Form() {
         message: message
       })
       .then(function(response) {
-        if (!response.data.errors) {
+        if (!response.data.errors && response.data.name != "MongoError") {
           setSent(true);
-          console.log(response.data.name); 
         }
-        let resError = response.data.errors;
+        let resError = response.data.errors || response.data;
         setError(resError);
       })
-      .catch(function(error) {
-        console.log(error); 
-      });
+      .catch(function(error) {});
+  }
+
+  function determError(formError) {
+    return formError.name == "MongoError"
+      ? (formError.type = "Duplicate Error")
+      : (formError.type = "Validation error");
+  }
+
+  function catchErr(formError) {
+    useEffect(() => {
+      setError(formError);
+    });
+    console.log(formError);
+  }
+
+  function configError(formError, e) {
+    determError(formError);
+    element = e.target.id;
+    if (formError.type === "Validation Error") {
+      return formError.hasOwnProperty(element) ? (
+        <span className="warning">{formError[element].message}</span>
+      ) : null;
+    } else if (formError.type === "Duplicate Error") {
+      return <span className="warning">{formError.type}</span>;
+    } else {
+      null;
+    }
   }
 
   return (
     <div>
+      {/* Ternary statement display form or null dependent on sent state  */}
       {!sent ? (
-        <form className="form-container">
+        <form className="form-container" onSubmit={formSubmit} id="form">
           <h1 className="form-header"> Request A Quote </h1>
           <hr></hr>
-          <label className="form-labels" htmlFor="firstname">
-            First Name: {formError.hasOwnProperty("firstname") ? 
-              <span className="warning">{formError.firstname.message}</span>
-             : null}
+          <label className="form-labels">
+            First Name: {catchErr(formError)}
           </label>
           <input
+            form="form"
             className="input-container"
             id="firstname"
             onInput={e => setFirstName(e.target.value)}
+            onChange={e => hello(e)}
           />
           <label className="form-labels" htmlFor="lastname">
-            Last Name: {formError.hasOwnProperty("lastname") ? 
+            {/* Last Name: {formError.hasOwnProperty("lastname") ? 
               <span className="warning">{formError.lastname.message}</span>
-             : null}
+             : null} */}
           </label>
           <input
             className="input-container"
@@ -66,9 +91,9 @@ function Form() {
             onInput={e => setLastName(e.target.value)}
           />
           <label className="form-labels" htmlFor="email">
-            Email: {formError.hasOwnProperty("email") ? 
+            {/* Email: {formError.hasOwnProperty("email") ? 
               <span className="warning">{formError.email.message}</span>
-             : null}
+             : null} */}
           </label>
           <input
             className="input-container"
@@ -78,9 +103,9 @@ function Form() {
           />
           <label className="form-labels" htmlFor="phonenumber">
             Phone Number: <span className="example">xxx-xxx-xxxx</span>{" "}
-            {formError.hasOwnProperty("phonenumber") ? 
+            {/* {formError.hasOwnProperty("phonenumber") ? 
               <span className="warning">{formError.phonenumber.message}</span>
-             : null}
+             : null} */}
           </label>
           <input
             className="input-container"
@@ -89,9 +114,9 @@ function Form() {
             onInput={e => setPhoneNumber(e.target.value)}
           />
           <label className="form-labels" htmlFor="company">
-            Company: {formError.hasOwnProperty("company") ? 
+            {/* Company: {formError.hasOwnProperty("company") ? 
               <span className="warning">{formError.company.message}</span>
-             : null}
+             : null} */}
           </label>
           <input
             className="input-container"
@@ -99,9 +124,9 @@ function Form() {
             onInput={e => setCompany(e.target.value)}
           />
           <label className="form-labels" htmlFor="location">
-            Location: {formError.hasOwnProperty("location") ? 
+            {/* Location: {formError.hasOwnProperty("location") ? 
               <span className="warning">{formError.location.message}</span>
-             : null}
+             : null} */}
           </label>
           <select
             className="input-container"
@@ -114,9 +139,9 @@ function Form() {
             <option value="Austin">Austin</option>
           </select>
           <label className="form-labels" htmlFor="currSupplier">
-            Current Supplier: {formError.hasOwnProperty("currsupplier") ? 
+            {/* Current Supplier: {formError.hasOwnProperty("currsupplier") ? 
               <span className="warning">{formError.currsupplier.message}</span>
-             : null}
+             : null} */}
           </label>
           <input
             className="input-container"
@@ -124,9 +149,9 @@ function Form() {
             onInput={e => setCurrSupplier(e.target.value)}
           />
           <label className="form-labels" htmlFor="message">
-            How Can We Help? {formError.hasOwnProperty("message") ? 
+            {/* How Can We Help? {formError.hasOwnProperty("message") ? 
               <span className="warning">{formError.message.message}</span>
-             : null}
+             : null} */}
           </label>
           <textarea
             className="input-container"
@@ -134,12 +159,7 @@ function Form() {
             id="message"
             onInput={e => setMessage(e.target.value)}
           />
-          <button
-            className="form-button"
-            type="submit"
-            value="Submit"
-            onClick={formSubmit}
-          >Submit</button>
+          <input className="form-button" type="submit" value="Submit"></input>
         </form>
       ) : (
         <div className="thankyou">

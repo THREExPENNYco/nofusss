@@ -21,7 +21,6 @@ const potenCust = new Schema(
       type: String,
       required: [true, "An email address is required"],
       trim: true,
-      unique: true,
       validate: {
         validator: function(email) {
           return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
@@ -39,7 +38,7 @@ const potenCust = new Schema(
     },
     location: { 
       type: String, 
-      required: [true, "We currently only service some locations"], 
+      required: [true, "We currently only service some locations."], 
       enum: ['Houston', 'San Antonio', 'Austin']
     }, 
     currsupplier: { 
@@ -58,7 +57,6 @@ const potenCust = new Schema(
     phonenumber: {
       type: String,
       trim: true,
-      unique: true,
       required: [true, "A phone number is required."],
       validate: {
         validator: function(number) {

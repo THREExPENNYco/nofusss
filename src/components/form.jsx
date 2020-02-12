@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function Form() {
@@ -29,43 +29,40 @@ function Form() {
       .then(function(response) {
         if (!response.data.errors) {
           setSent(true);
-          console.log(response.data.name); 
         }
         let resError = response.data.errors;
         setError(resError);
       })
-      .catch(function(error) {
-        console.log(error); 
-      });
+      .catch(function(error) {});
   }
 
   return (
     <div>
+      {/* Ternary statement display form or null dependent on sent state  */}
       {!sent ? (
-        <form className="form-container">
+        <form className="form-container" onSubmit={formSubmit}>
           <h1 className="form-header"> Request A Quote </h1>
           <hr></hr>
-          <label className="form-labels" htmlFor="firstname">
+          <label className="form-labels">
             First Name: {formError.hasOwnProperty("firstname") ? 
-              <span className="warning">{formError.firstname.message}</span>
+              <span className="warning">{formError.lastname.message}</span>
              : null}
           </label>
           <input
+            form="form"
             className="input-container"
-            id="firstname"
-            onInput={e => setFirstName(e.target.value)}
+            onChange={e => setFirstName(e.target.value)}
           />
-          <label className="form-labels" htmlFor="lastname">
+          <label className="form-labels">
             Last Name: {formError.hasOwnProperty("lastname") ? 
               <span className="warning">{formError.lastname.message}</span>
              : null}
           </label>
           <input
             className="input-container"
-            id="lastname"
-            onInput={e => setLastName(e.target.value)}
+            onChange={e => setLastName(e.target.value)}
           />
-          <label className="form-labels" htmlFor="email">
+          <label className="form-labels">
             Email: {formError.hasOwnProperty("email") ? 
               <span className="warning">{formError.email.message}</span>
              : null}
@@ -73,10 +70,9 @@ function Form() {
           <input
             className="input-container"
             type="email"
-            id="email"
-            onInput={e => setEmail(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
           />
-          <label className="form-labels" htmlFor="phonenumber">
+          <label className="form-labels">
             Phone Number: <span className="example">xxx-xxx-xxxx</span>{" "}
             {formError.hasOwnProperty("phonenumber") ? 
               <span className="warning">{formError.phonenumber.message}</span>
@@ -85,20 +81,18 @@ function Form() {
           <input
             className="input-container"
             type="tel"
-            id="phonenumber"
-            onInput={e => setPhoneNumber(e.target.value)}
+            onChange={e => setPhoneNumber(e.target.value)}
           />
-          <label className="form-labels" htmlFor="company">
+          <label className="form-labels">
             Company: {formError.hasOwnProperty("company") ? 
               <span className="warning">{formError.company.message}</span>
              : null}
           </label>
           <input
             className="input-container"
-            id="company"
-            onInput={e => setCompany(e.target.value)}
+            onChange={e => setCompany(e.target.value)}
           />
-          <label className="form-labels" htmlFor="location">
+          <label className="form-labels">
             Location: {formError.hasOwnProperty("location") ? 
               <span className="warning">{formError.location.message}</span>
              : null}
@@ -113,17 +107,16 @@ function Form() {
             <option value="San Antonio">San Antonio</option>
             <option value="Austin">Austin</option>
           </select>
-          <label className="form-labels" htmlFor="currSupplier">
+          <label className="form-labels">
             Current Supplier: {formError.hasOwnProperty("currsupplier") ? 
               <span className="warning">{formError.currsupplier.message}</span>
              : null}
           </label>
           <input
             className="input-container"
-            id="currSupplier"
-            onInput={e => setCurrSupplier(e.target.value)}
+            onChange={e => setCurrSupplier(e.target.value)}
           />
-          <label className="form-labels" htmlFor="message">
+          <label className="form-labels">
             How Can We Help? {formError.hasOwnProperty("message") ? 
               <span className="warning">{formError.message.message}</span>
              : null}
@@ -131,15 +124,9 @@ function Form() {
           <textarea
             className="input-container"
             type="text"
-            id="message"
-            onInput={e => setMessage(e.target.value)}
+            onChange={e => setMessage(e.target.value)}
           />
-          <button
-            className="form-button"
-            type="submit"
-            value="Submit"
-            onClick={formSubmit}
-          >Submit</button>
+          <input className="form-button" type="submit" value="Submit"></input>
         </form>
       ) : (
         <div className="thankyou">

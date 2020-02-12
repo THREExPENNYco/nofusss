@@ -44,9 +44,10 @@ function Form() {
           <h1 className="form-header"> Request A Quote </h1>
           <hr></hr>
           <label className="form-labels">
-            First Name: {formError.hasOwnProperty("firstname") ? 
+            First Name:{" "}
+            {formError.hasOwnProperty("firstname") ? (
               <span className="warning">{formError.lastname.message}</span>
-             : null}
+            ) : null}
           </label>
           <input
             form="form"
@@ -54,18 +55,20 @@ function Form() {
             onChange={e => setFirstName(e.target.value)}
           />
           <label className="form-labels">
-            Last Name: {formError.hasOwnProperty("lastname") ? 
+            Last Name:{" "}
+            {formError.hasOwnProperty("lastname") ? (
               <span className="warning">{formError.lastname.message}</span>
-             : null}
+            ) : null}
           </label>
           <input
             className="input-container"
             onChange={e => setLastName(e.target.value)}
           />
           <label className="form-labels">
-            Email: {formError.hasOwnProperty("email") ? 
+            Email:{" "}
+            {formError.hasOwnProperty("email") ? (
               <span className="warning">{formError.email.message}</span>
-             : null}
+            ) : null}
           </label>
           <input
             className="input-container"
@@ -74,9 +77,9 @@ function Form() {
           />
           <label className="form-labels">
             Phone Number: <span className="example">xxx-xxx-xxxx</span>{" "}
-            {formError.hasOwnProperty("phonenumber") ? 
+            {formError.hasOwnProperty("phonenumber") ? (
               <span className="warning">{formError.phonenumber.message}</span>
-             : null}
+            ) : null}
           </label>
           <input
             className="input-container"
@@ -84,18 +87,20 @@ function Form() {
             onChange={e => setPhoneNumber(e.target.value)}
           />
           <label className="form-labels">
-            Company: {formError.hasOwnProperty("company") ? 
+            Company:{" "}
+            {formError.hasOwnProperty("company") ? (
               <span className="warning">{formError.company.message}</span>
-             : null}
+            ) : null}
           </label>
           <input
             className="input-container"
             onChange={e => setCompany(e.target.value)}
           />
           <label className="form-labels">
-            Location: {formError.hasOwnProperty("location") ? 
+            Location:{" "}
+            {formError.hasOwnProperty("location") ? (
               <span className="warning">{formError.location.message}</span>
-             : null}
+            ) : null}
           </label>
           <select
             className="input-container"
@@ -108,18 +113,20 @@ function Form() {
             <option value="Austin">Austin</option>
           </select>
           <label className="form-labels">
-            Current Supplier: {formError.hasOwnProperty("currsupplier") ? 
+            Current Supplier:{" "}
+            {formError.hasOwnProperty("currsupplier") ? (
               <span className="warning">{formError.currsupplier.message}</span>
-             : null}
+            ) : null}
           </label>
           <input
             className="input-container"
             onChange={e => setCurrSupplier(e.target.value)}
           />
           <label className="form-labels">
-            How Can We Help? {formError.hasOwnProperty("message") ? 
+            How Can We Help?{" "}
+            {formError.hasOwnProperty("message") ? (
               <span className="warning">{formError.message.message}</span>
-             : null}
+            ) : null}
           </label>
           <textarea
             className="input-container"

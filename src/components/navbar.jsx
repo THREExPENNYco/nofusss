@@ -1,11 +1,12 @@
 import React from "react";
+import image from "../components/componentAssets/nofusslogo.png";
 
 function Navbar() {
   return (
     <nav className="main-nav">
       <img
         className="main-logo"
-        src={require("../components/componentAssets/nofusslogo.png")}
+        src={image}
         alt="Nofuss Logo"
       ></img>
     </nav>

@@ -6,6 +6,7 @@ import Snippet from "./components/snippet.jsx";
 import snippets from "./nofussprods/snippets.js";
 import Button from "./components/button.jsx";
 import prodInv from "./nofussprods/productinfo.js";
+import Splash from "./components/splash.jsx"; 
 
 class App extends Component {
   state = {
@@ -24,15 +25,20 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
+        <Splash /> 
+        <div className="main-container"> 
         <section className="article-main">
           {Object.keys(this.state.snippets).map((snippet, index) => (
             <Snippet
+              image={this.state.snippets[snippet].image}
               key={index}
               snippet={this.state.snippets[snippet].snippet}
               snippetHead={this.state.snippets[snippet].snippetHead}
             />
           ))}
         </section>
+        <h1 className="services">Services We Provide</h1> 
+        <hr /> 
         <section className="button-section">
           {Object.keys(this.state.productCategory).map((category, index) => (
             <Button
@@ -43,6 +49,7 @@ class App extends Component {
           ))}
         </section>
         <Form />
+        </div>
       </div>
     );
   }

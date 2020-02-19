@@ -7,6 +7,7 @@ import snippets from "./nofussprods/snippets.js";
 import Button from "./components/button.jsx";
 import prodInv from "./nofussprods/productinfo.js";
 import Splash from "./components/splash.jsx"; 
+import Header from "./components/header.jsx"; 
 
 class App extends Component {
   state = {
@@ -37,10 +38,7 @@ class App extends Component {
             />
           ))}
         </section >
-        <div className="services">
-          <h1>Services We Provide</h1> 
-        <hr className="services-hr"/>
-        </div>
+        <Header /> 
         <section className="button-section">
           {Object.keys(this.state.productCategory).map((category, index) => (
             <Button

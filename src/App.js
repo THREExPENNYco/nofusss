@@ -7,6 +7,8 @@ import snippets from "./nofussprods/snippets.js";
 import Button from "./components/button.jsx";
 import prodInv from "./nofussprods/productinfo.js";
 import Splash from "./components/splash.jsx"; 
+import AOS from 'aos'; 
+import 'aos/dist/aos.css';
 
 class App extends Component {
   state = {
@@ -15,6 +17,7 @@ class App extends Component {
   };
 
   componentDidMount = () => {
+    AOS.init(); 
     var productsInv = prodInv;
     var snipObjs = snippets;
     this.setState({ productCategory: productsInv });

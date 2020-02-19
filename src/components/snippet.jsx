@@ -13,12 +13,12 @@ function Snippet(props) {
   }
 
   return (
-    <article>
+    <div>
       <img className="snippet-images" src={image}></img>
       <h1 className="article-title">{props.snippetHead}</h1>
       <hr></hr>
       <p className="article-par">{props.snippet}</p>
-    </article>
+    </div>
   );
 }
 

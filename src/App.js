@@ -36,9 +36,11 @@ class App extends Component {
               snippetHead={this.state.snippets[snippet].snippetHead}
             />
           ))}
-        </section>
-        <h1 className="services">Services We Provide</h1> 
-        <hr /> 
+        </section >
+        <div className="services">
+          <h1>Services We Provide</h1> 
+        <hr className="services-hr"/>
+        </div>
         <section className="button-section">
           {Object.keys(this.state.productCategory).map((category, index) => (
             <Button

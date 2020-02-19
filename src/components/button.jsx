@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Spring } from "react-spring/renderprops";
 
 class Button extends Component {
   constructor(props) {
@@ -14,7 +15,12 @@ class Button extends Component {
 
   render() {
     return (
-      <section className="product-category">
+      <Spring
+      from={{ opacity: 0, marginTop: -100 }}
+      to={{ opacity: 1, marginTop: 0 }}
+      config={{ duration: 1000 }}
+    >{ spring => 
+      <section className="product-category" style={spring}>
         <button onClick={e => this.handleClick(e)} className="product-button">
           {this.props.product}
         </button>
@@ -24,11 +30,13 @@ class Button extends Component {
                 <li key={index} className="category-items">
                   {item}
                 </li>
-                <hr className="category-hr"></hr>
+               <br></br>
               </section>
               ))
             : null }
       </section>
+      }
+      </Spring>
     );
   }
 }

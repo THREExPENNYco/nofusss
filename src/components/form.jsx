@@ -37,7 +37,7 @@ function Form() {
   }
 
   return (
-    <div>
+    <div className="form-background">
       {/* Ternary statement display form or null dependent on sent state  */}
       {!sent ? (
         <form className="form-container" onSubmit={formSubmit}>

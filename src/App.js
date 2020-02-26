@@ -7,17 +7,19 @@ import snippets from "./nofussprods/snippets.js";
 import Button from "./components/button.jsx";
 import prodInv from "./nofussprods/productinfo.js";
 import Splash from "./components/splash.jsx"; 
-import AOS from 'aos'; 
-import 'aos/dist/aos.css';
+import Header from "./components/header.jsx"; 
 
 class App extends Component {
   state = {
     productCategory: {},
-    snippets: {}
+    snippets: {}, 
+    headerText: { 
+      top: "Years of Service", 
+      middle: "Sevices We Provide"
+    }
   };
 
   componentDidMount = () => {
-    AOS.init(); 
     var productsInv = prodInv;
     var snipObjs = snippets;
     this.setState({ productCategory: productsInv });
@@ -30,6 +32,7 @@ class App extends Component {
         <Navbar />
         <Splash /> 
         <div className="main-container"> 
+        <Header text={this.state.headerText.top} />
         <section className="article-main">
           {Object.keys(this.state.snippets).map((snippet, index) => (
             <Snippet
@@ -40,8 +43,7 @@ class App extends Component {
             />
           ))}
         </section>
-        <h1 className="services">Services We Provide</h1> 
-        <hr /> 
+        <Header text={this.state.headerText.middle} /> 
         <section className="button-section">
           {Object.keys(this.state.productCategory).map((category, index) => (
             <Button

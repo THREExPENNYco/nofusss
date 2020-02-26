@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Spring } from "react-spring/renderprops";
 
 class Button extends Component {
   constructor(props) {
@@ -14,21 +15,32 @@ class Button extends Component {
 
   render() {
     return (
-      <section className="product-category">
-        <button onClick={e => this.handleClick(e)} className="product-button">
-          {this.props.product}
-        </button>
-          {this.state.buttonClicked
-            ? this.props.menuItems.map((item, index) => (
-              <section className="category-container"> 
-                <li key={index} className="category-items">
-                  {item}
-                </li>
-                <hr className="category-hr"></hr>
-              </section>
-              ))
-            : null }
-      </section>
+      <Spring
+        from={{ opacity: 0.75, marginTop: -100 }}
+        to={{ opacity: 1, marginTop: 0 }}
+        config={{ duration: 500 }}
+      >
+        {spring => (
+          <section className="product-category" style={spring}>
+            <button
+              onClick={e => this.handleClick(e)}
+              className="product-button"
+            >
+              {this.props.product}
+            </button>
+            {this.state.buttonClicked
+              ? this.props.menuItems.map((item, index) => (
+                  <section className="category-container">
+                    <li key={index} className="category-items">
+                      {item}
+                    </li>
+                    <br></br>
+                  </section>
+                ))
+              : null}
+          </section>
+        )}
+      </Spring>
     );
   }
 }

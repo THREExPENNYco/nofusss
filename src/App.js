@@ -8,20 +8,21 @@ import Button from "./components/button.jsx";
 import prodInv from "./nofussprods/productinfo.js";
 import Splash from "./components/splash.jsx"; 
 import Header from "./components/header.jsx"; 
+import Text from "./components/text.jsx"
+import headerText from "./nofussprods/text.js"
 
 class App extends Component {
   state = {
     productCategory: {},
     snippets: {}, 
-    headerText: { 
-      top: "Years of Service", 
-      middle: "Sevices We Provide"
-    }
+    headerText: {}
   };
 
   componentDidMount = () => {
     var productsInv = prodInv;
     var snipObjs = snippets;
+    var headerObj = headerText; 
+    this.setState({ headerText: headerObj }); 
     this.setState({ productCategory: productsInv });
     this.setState({ snippets: snipObjs });
   };
@@ -33,6 +34,7 @@ class App extends Component {
         <Splash /> 
         <div className="main-container"> 
         <Header text={this.state.headerText.top} />
+        <Text text={this.state.headerText.text} />
         <section className="article-main">
           {Object.keys(this.state.snippets).map((snippet, index) => (
             <Snippet

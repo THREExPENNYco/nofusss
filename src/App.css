@@ -133,7 +133,8 @@ select.input-container {
 
 article {
   padding: 35px;
-  magin-top: 50px;
+  margin-top: 50px;
+  border-radius: 5px; 
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
@@ -240,6 +241,7 @@ hr {
   margin-left: auto;
   margin-bottom: 85px;
   font-size: large;
+  border-radius: 5px; 
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);

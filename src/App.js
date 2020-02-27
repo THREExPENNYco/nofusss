@@ -12,7 +12,11 @@ import Header from "./components/header.jsx";
 class App extends Component {
   state = {
     productCategory: {},
-    snippets: {}
+    snippets: {}, 
+    headerText: { 
+      top: "Years of Service", 
+      middle: "Sevices We Provide"
+    }
   };
 
   componentDidMount = () => {
@@ -28,6 +32,7 @@ class App extends Component {
         <Navbar />
         <Splash /> 
         <div className="main-container"> 
+        <Header text={this.state.headerText.top} />
         <section className="article-main">
           {Object.keys(this.state.snippets).map((snippet, index) => (
             <Snippet
@@ -37,8 +42,8 @@ class App extends Component {
               snippetHead={this.state.snippets[snippet].snippetHead}
             />
           ))}
-        </section >
-        <Header /> 
+        </section>
+        <Header text={this.state.headerText.middle} /> 
         <section className="button-section">
           {Object.keys(this.state.productCategory).map((category, index) => (
             <Button

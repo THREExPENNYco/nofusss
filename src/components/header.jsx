@@ -1,17 +1,19 @@
-import React from "react";
-import { Spring } from "react-spring/renderprops";
+/* eslint-disable react/prop-types */
+import React from 'react';
+import { Spring } from 'react-spring/renderprops';
 
-function Header() {
+function Header(props) {
   return (
     <Spring
       from={{ opacity: 0, top: 100 }}
       to={{ opacity: 1 }}
-      config={{ duration: 2000 }}
+      config={{ duration: 1000 }}
     >
-      {props => (
-        <div className="services" style={props}>
-          <h1>Services We Provide</h1>
+      {(spring) => (
+        <div className="services" style={spring}>
+          <h1>{props.text}</h1>
           <hr className="services-hr" />
+          <p className="header-par">{props.description}</p>
         </div>
       )}
     </Spring>

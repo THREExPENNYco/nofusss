@@ -1,7 +1,7 @@
 /* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: normal;
   margin: 0;
 }
@@ -132,6 +132,7 @@ select.input-container {
 }
 
 article {
+  max-width: 250px;
   padding: 35px;
   margin-top: 50px;
   border-radius: 5px; 
@@ -140,8 +141,6 @@ article {
   -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
   background-color: white;
-  border: solid 0.5px; 
-  border-color: #2d6b2c;
 }
 
 .article-main {
@@ -310,7 +309,7 @@ footer {
 
 .services {
   text-align: center;
-  font-size: 1.95em;
+  font-size: 1.55em;
   letter-spacing: 0.045em;
   font-style: normal;
   margin-top: 75px;
@@ -336,7 +335,7 @@ footer {
 
   article {
     margin-top: 45px;
-    max-width: 50%; 
+    max-width: 50%;
     margin-right: auto;
     margin-left: auto;
     margin-top: 50px;
@@ -360,17 +359,16 @@ footer {
   .form-container {
     min-height: 600px;
     min-width: 100px;
-    max-width: 75%; 
+    max-width: 75%;
     padding-top: 10px;
     padding-bottom: 25px;
   }
-   .button-section { 
-     max-width: 33%;
-   }
 
-  .product-button { 
+  .button-section {
+    max-width: 33%;
+  }
+
+  .product-button {
     max-width: 250px;
   }
 }
-
-

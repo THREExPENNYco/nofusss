@@ -1,13 +1,13 @@
 const snippets = {
   snippet1: {
     image: 'chemicalpng',
-    snippetHead: 'What We Do',
+    snippetHead: 'Janitorial Supplies',
     snippet: 
       'With over twenty years of experience, we are dedicated to providing quality service.',
   },
   snippet2: {
     image: 'paperpng',
-    snippetHead: 'Customization Is Key',
+    snippetHead: 'Personalization',
     snippet: 'Prices are based on your personal business needs',
   },
 

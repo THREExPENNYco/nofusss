@@ -144,13 +144,13 @@ article {
 	margin-right: auto;
 	margin-left: auto;
 	max-width: 1280px;
-	max-height: 800px;
+	max-height: 90000px;
 }
 .article-par {
 	text-align: center;
 	max-width: 300px;
 	overflow: hidden;
-	font-size: 14px;
+	font-size: 1.05em;
 }
 .article-title {
 	text-align: center;
@@ -160,14 +160,17 @@ article {
 }
 .text {
 	text-align: center;
-	font-size: 1em;
+	font-size: 1.5em;
 	letter-spacing: 0.045em;
-	font-style: normal;
+  font-style: normal;
+  margin-top: 0; 
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
 }
 hr {
 	max-width: 300px;
 	border-color: #2d6b2c;
-	margin-bottom: 20px;
 }
 .product-button {
 	display: block;
@@ -300,7 +303,6 @@ footer {
 	border-color: #2d6b2c;
 	border-style: solid;
 	min-width: 85%;
-	margin-bottom: 50px;
 	border-radius: 5px;
 }
 @media (max-width: 970px) {
@@ -315,8 +317,8 @@ footer {
 		margin-top: 50px;
 	}
 	.article-main {
-		margin-top: 200px;
-		margin-bottom: 275px;
+		margin-top: 25px;
+		margin-bottom: 2px;
 		flex-direction: column;
 	}
 	.article-par {
@@ -324,7 +326,7 @@ footer {
 		max-width: 300px;
 		overflow: hidden;
 		margin: auto;
-		font-size: 14px;
+		font-size: 1.05em;
 		justify-content: space-evenly;
 	}
 	.form-container {

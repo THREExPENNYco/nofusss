@@ -34,7 +34,7 @@ class App extends Component {
         <Splash /> 
         <div className="main-container"> 
         <Header text={this.state.headerText.top} />
-        <Text text={this.state.headerText.text} />
+        <Text text={this.state.headerText.customization} />
         <section className="article-main">
           {Object.keys(this.state.snippets).map((snippet, index) => (
             <Snippet
@@ -46,6 +46,7 @@ class App extends Component {
           ))}
         </section>
         <Header text={this.state.headerText.middle} /> 
+        <Text text={this.state.headerText.servicesPro} />
         <section className="button-section">
           {Object.keys(this.state.productCategory).map((category, index) => (
             <Button

@@ -3,7 +3,7 @@ const router = require('express').Router();
 const PotenCustModel = require('../models/potenCustModel.js');
 
 router.route('/').get((req, res) => {
-  res.send('ok')
+  
 });
 
 router.route('/post').post((req, res) => {

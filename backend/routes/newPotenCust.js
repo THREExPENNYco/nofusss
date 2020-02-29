@@ -2,9 +2,9 @@
 const router = require('express').Router();
 const PotenCustModel = require('../models/potenCustModel.js');
 
-router.route('/').get((req, res) => {
+// router.route('/').get((req, res) => {
   
-});
+// });
 
 router.route('/post').post((req, res) => {
   const { currsupplier } = req.body;

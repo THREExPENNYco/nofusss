@@ -1,4 +1,6 @@
+/* eslint-disable linebreak-style */
 const express = require('express');
+const path = require('path'); 
 
 const app = express();
 const mongoose = require('mongoose');
@@ -23,6 +25,13 @@ const potenCustRoute = require('./routes/newPotenCust.js');
 app.use('/post', potenCustRoute);
 app.use('/', potenCustRoute);
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  app.get('*', (res, req) => { 
+    res.sendFile(path.join(__dirname, 'build', 'index.html')); 
+  })
+}
+
 app.listen(port, () => {
-  console.log(`You\'re listening on: ${port}`);
+  console.log(`You're listening on: ${port}`);
 });

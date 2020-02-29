@@ -7,7 +7,8 @@
     "dev:test": "webpack-dev-server --entry ./src/index.js --output nofussSite/dist/bundle.js --mode development",
     "test": "echo \"Error: no test specified\" && exit 1", 
     "build": "webpack",
-    "start": "node server.js"
+    "start": "node server.js", 
+    "heroku-postbuild":"cd dist && npm install && npm run build"
   },
   "author": "Devoun Edwards",
   "license": "ISC",

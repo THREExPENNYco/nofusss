@@ -1,10 +1,11 @@
 /* eslint-disable linebreak-style */
 const router = require('express').Router();
+const path = require('path');
 const PotenCustModel = require('../models/potenCustModel.js');
 
-// router.route('/').get((req, res) => {
-  
-// });
+router.route('/').get((req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 router.route('/post').post((req, res) => {
   const { currsupplier } = req.body;

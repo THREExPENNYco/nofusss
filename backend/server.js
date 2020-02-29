@@ -24,12 +24,12 @@ connection.once('open', () => {
 const potenCustRoute = require('./routes/newPotenCust.js');
 
 app.use('/post', potenCustRoute);
-// app.use('/', potenCustRoute);
+app.use('/', potenCustRoute);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('dist'));
   app.get('*', (res, req) => {
-    res.sendfile(path.join(__dirname, 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
   });
 }
 

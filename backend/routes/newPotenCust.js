@@ -4,7 +4,7 @@ const path = require('path');
 const PotenCustModel = require('../models/potenCustModel.js');
 
 router.route('/').get((req, res) => {
-  res.sendFile(path.join('./', 'dist', 'index.html'));
+  res.sendFile(path.join('dist', 'index.html'));
 });
 
 router.route('/post').post((req, res) => {

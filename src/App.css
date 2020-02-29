@@ -169,7 +169,7 @@ article {
   margin-left: auto;
 }
 hr {
-  max-width: 300px;
+  max-width: 75%;
   border-color: #2d6b2c;
 }
 .product-button {
@@ -213,7 +213,6 @@ hr {
   display: flex;
   padding-left: 100px;
   padding-right: 100px;
-  /* padding-top: 75px; */
   padding-bottom: 75px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -228,11 +227,7 @@ hr {
   margin-right: auto;
   margin-left: auto;
   font-size: large;
-  border-radius: 5px;
-  /* -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2); */
+  border-radius: 5px; 
 }
 .category-items {
   font-size: 14px;
@@ -295,7 +290,7 @@ footer {
   font-size: 1.55em;
   letter-spacing: 0.045em;
   font-weight: 100;
-  margin-top: 75px;
+  margin-top: 35px;
   padding-top: 5px;
   padding-bottom: 5px;
   max-width: 100%;
@@ -313,7 +308,7 @@ footer {
 }
 @media (max-width: 970px) {
   .splash-image {
-    margin-top: 55px;
+	margin-top: 55px;
   }
   article {
     margin-top: 45px;

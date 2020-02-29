@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 const express = require('express');
-const path = require('path'); 
+const path = require('path');
 
 const app = express();
 const mongoose = require('mongoose');
@@ -27,9 +27,9 @@ app.use('/', potenCustRoute);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
-  app.get('/', (res, req) => {
-    res.sendfile(path.join(__dirname, 'dist', 'index.html')); 
-  })
+  app.get('*', (res, req) => {
+    res.sendfile(path.join(__dirname, 'dist', 'index.html'));
+  });
 }
 
 app.listen(port, () => {

@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+/* eslint-disable linebreak-style */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+import React from 'react';
 
-function Text(props) { 
-    return(
-        <p className="text">{props.text}</p> 
-     )
+function Text(props) {
+  return (
+    <p className="text">{props.text}</p>
+  );
 }
 
-export default Text; 
+export default Text;

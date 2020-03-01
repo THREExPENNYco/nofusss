@@ -10,6 +10,7 @@ import Splash from "./components/splash.jsx";
 import Header from "./components/header.jsx"; 
 import Text from "./components/text.jsx"
 import headerText from "./nofussprods/text.js"
+import Footer from "./components/footer.jsx"; 
 
 class App extends Component {
   state = {
@@ -57,6 +58,7 @@ class App extends Component {
           ))}
         </section>
         <Form />
+        <Footer /> 
         </div>
       </div>
     );

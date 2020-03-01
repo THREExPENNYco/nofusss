@@ -1,33 +1,37 @@
-const router = require("express").Router();
-let PotenCustModel = require("../models/potenCustModel.js");
+/* eslint-disable linebreak-style */
+const router = require('express').Router();
+const path = require('path');
+const PotenCustModel = require('../models/potenCustModel.js');
 
-router.route("/").get(() => {})
+router.route('/').get((req, res) => {
+  res.sendFile(path.resolve('dist/index.html'));
+});
 
-router.route("/post").post((req, res) => {
-  const currsupplier = req.body.currsupplier; 
-  const firstname = req.body.firstname; 
-  const lastname = req.body.lastname; 
-  const phonenumber = req.body.phonenumber;
-  const email = req.body.email;
-  const message = req.body.message;
-  const company = req.body.company;
-  const location = req.body.location; 
+router.route('/post').post((req, res) => {
+  const { currsupplier } = req.body;
+  const { firstname } = req.body;
+  const { lastname } = req.body;
+  const { phonenumber } = req.body;
+  const { email } = req.body;
+  const { message } = req.body;
+  const { company } = req.body;
+  const { location } = req.body;
 
   const newPotenCust = new PotenCustModel({
     firstname,
-    lastname, 
+    lastname,
     phonenumber,
-    company, 
+    company,
     email,
-    message, 
-    currsupplier, 
-    location 
+    message,
+    currsupplier,
+    location,
   });
 
   newPotenCust
     .save()
-    .then(() => res.json("New Poten Customer Added"))
-    .catch(err => res.json(err))
+    .then(() => res.json('New Poten Customer Added'))
+    .catch((err) => res.json(err));
 });
 
 module.exports = router;

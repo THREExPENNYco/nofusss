@@ -144,13 +144,20 @@ article {
 	margin-right: auto;
 	margin-left: auto;
 	max-width: 1280px;
-	max-height: 90000px;
+	max-height: 1000px;
+	padding-bottom: 50px; 
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+	background-color: white;
 }
 .article-par {
 	text-align: center;
 	max-width: 300px;
 	overflow: hidden;
 	font-size: 1.05em;
+	font-family: 'Merriweather';
 }
 .article-title {
 	text-align: center;
@@ -167,6 +174,8 @@ article {
   max-width: 80%;
   margin-right: auto;
   margin-left: auto;
+  font-family: 'Merriweather'; 
+  font-weight: 100; 
 }
 hr {
 	max-width: 300px;
@@ -327,6 +336,7 @@ footer {
 		overflow: hidden;
 		margin: auto;
 		font-size: 1.05em;
+		font-weight: 100;
 		justify-content: space-evenly;
 	}
 	.form-container {

@@ -3,12 +3,12 @@ const snippets = {
     image: 'chemicalpng',
     snippetHead: 'Janitorial Supplies',
     snippet: 
-      'With over twenty years of experience, we are dedicated to providing quality service.',
+      'We provide a range of janitorial products.',
   },
   snippet2: {
     image: 'paperpng',
-    snippetHead: 'Personalization',
-    snippet: 'Prices are based on your personal business needs',
+    snippetHead: 'Delivery',
+    snippet: 'No need for travel. Nofuss will bring the supplies right to you.',
   },
 
   snippet3: {

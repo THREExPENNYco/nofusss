@@ -12,7 +12,7 @@ body {
   }
   .main-nav {
 	width: 100%;
-	background-color: #2d6b2c;
+	background-color: #2D6B2C;
 	min-height: 65px;
 	top: 0;
 	-webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 1);
@@ -87,7 +87,7 @@ body {
 	margin-bottom: 10px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #2d6b2c;
+	background-color: #2D6B2C;
 	border-radius: 5px;
 	height: 45px;
 	width: 275px;
@@ -112,7 +112,7 @@ body {
 	-webkit-box-shadow: inset -2px 13px 17px -17px rgba(8, 7, 7, 1);
 	-moz-box-shadow: inset -2px 13px 7px -7px rgba(0, 0, 0, 1);
 	box-shadow: inset -2px 13px 17px -17px rgba(0, 0, 0, 1);
-	background-color: #2d6b2c;
+	background-color: #2D6B2C;
   }
   article {
 	max-width: 250px;
@@ -151,10 +151,11 @@ body {
 	background-color: white;
   }
   .article-par {
-	text-align: center;
-	max-width: 300px;
+	text-align: justify;
+	max-width: 250px;
 	overflow: hidden;
 	font-size: 1.05em;
+	text-align-last: center;
   }
   .article-title {
 	text-align: center;
@@ -164,25 +165,26 @@ body {
 	margin-bottom: 0; 
   }
   .text {
-	text-align: center;
-	font-size: 1.5em;
-	letter-spacing: 0.045em;
+	text-align: justify;
+	text-align-last: center;
+	font-size: 1.50em;
+	/* letter-spacing: 0.045em; */
 	font-style: normal;
 	margin-top: 0;
-	max-width: 60%;
+	max-width: 80%;
 	margin-right: auto;
 	margin-left: auto;
   }
   hr {
 	max-width: 55%;
-	border-color: #2d6b2c;
+	border-color: #2D6B2C;
   }
   .product-button {
 	display: block;
 	margin-top: 30px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #2d6b2c;
+	background-color: #2D6B2C;
 	border-radius: 5px;
 	height: 45px;
 	width: 375px;
@@ -208,7 +210,7 @@ body {
 	-webkit-box-shadow: inset -2px 13px 17px -17px rgba(8, 7, 7, 1);
 	-moz-box-shadow: inset -2px 13px 7px -7px rgba(0, 0, 0, 1);
 	box-shadow: inset -2px 13px 17px -17px rgba(0, 0, 0, 1);
-	background-color: #2d6b2c;
+	background-color: #2D6B2C;
   }
   .button-section {
 	max-width: 85%;
@@ -268,7 +270,7 @@ body {
   footer {
 	margin-top: 55px;
 	min-height: 50px;
-	background-color: #2d6b2c;
+	background-color: #2D6B2C;
 	color: white; 
 	text-align: center; 
 	padding-top: 25px; 
@@ -287,8 +289,8 @@ body {
   }
   .splash-image {
 	margin-top: 25px;
-	max-width: 100%;
-	max-height: 100%;
+	max-width: 115%;
+	max-height: 115%;
   }
   .services {
 	text-align: center;
@@ -299,6 +301,7 @@ body {
 	padding-top: 5px;
 	padding-bottom: 5px;
 	max-width: 100%;
+	
   }
   .services > h1 {
 	line-spacing: 8px; 
@@ -307,31 +310,31 @@ body {
 	margin-right: auto;
 	margin-left: auto; 
 	border: 2px solid; 
-	border-color: #2d6b2c; 
+	border-color: #2D6B2C; 
 	padding: 5px;
-	border-radius: 8px;
-	background-color: #2d6b2c;
+	border-radius: 5px;
+	background-color: #2D6B2C;
 	color: white;
-	-webkit-box-shadow: -1px 21px 10px -5px rgba(43, 84, 33, 1);
-	-moz-box-shadow: -1px 21px 5px -5px rgba(43, 84, 33, 1);
-	box-shadow: -1px 10px 5px -5px rgba(43, 84, 33, 1);
+	-webkit-box-shadow: 0px 2px 0px 5px  #5D8246;
+	-moz-box-shadow:    0px 2px 0px 5px  #5D8246;
+	box-shadow:        	0px 2px 0px 5px  #5D8246;
   }
   .services-hr {
 	margin-top: 15px;
 	border: 1px;
-	border-color: #2d6b2c;
+	border-color: #2D6B2C;
 	border-style: solid;
 	min-width: 65%;
 	border-radius: 5px;
   }
-  @media (max-width: 970px) {
+  @media (max-width: 1280px) {
 	.splash-image {
 	  margin-top: 55px;
 	  max-height: 100%;
 	}
 	article {
 	  margin-top: 45px;
-	  max-width: 50%;
+	  max-width: 65%;
 	  margin-right: auto;
 	  margin-left: auto;
 	  margin-top: 50px;
@@ -339,6 +342,7 @@ body {
 	.article-main {
 	  margin-top: 25px;
 	  margin-bottom: 2px;
+	  max-width: calc(65% - 100px);
 	  flex-direction: column;
 	}
 	.article-par {
@@ -352,7 +356,7 @@ body {
 	.form-container {
 	  min-height: 600px;
 	  min-width: 100px;
-	  max-width: 75%;
+	  max-width: 85%;
 	  padding-top: 10px;
 	  padding-bottom: 25px;
 	}
@@ -369,4 +373,11 @@ body {
 	.text { 
 		font-size: 1.10em;
 	}
-  }
+	@media (max-width: 746px) { 
+		.article-main { 
+			max-width: calc(65% + 70px);
+		}
+	} 
+}
+
+  

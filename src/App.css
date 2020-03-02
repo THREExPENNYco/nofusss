@@ -117,7 +117,7 @@ body {
   article {
 	max-width: 250px;
 	padding: 35px;
-	margin-top: 50px;
+	margin-top: 70px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -126,7 +126,7 @@ body {
 	background-color: white;
   }
   .article-main {
-	margin-top: 95px;
+	margin-top: 85px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -161,6 +161,7 @@ body {
 	font-size: 1.5em;
 	letter-spacing: 0.045em;
 	font-weight: 400;
+	margin-bottom: 0; 
   }
   .text {
 	text-align: center;
@@ -168,12 +169,12 @@ body {
 	letter-spacing: 0.045em;
 	font-style: normal;
 	margin-top: 0;
-	max-width: 80%;
+	max-width: 60%;
 	margin-right: auto;
 	margin-left: auto;
   }
   hr {
-	max-width: 75%;
+	max-width: 55%;
 	border-color: #2d6b2c;
   }
   .product-button {
@@ -300,14 +301,27 @@ body {
 	max-width: 100%;
   }
   .services > h1 {
+	line-spacing: 8px; 
 	font-weight: 350;
+	max-width: 600px;
+	margin-right: auto;
+	margin-left: auto; 
+	border: 2px solid; 
+	border-color: #2d6b2c; 
+	padding: 5px;
+	border-radius: 8px;
+	background-color: #2d6b2c;
+	color: white;
+	-webkit-box-shadow: -1px 21px 10px -5px rgba(43, 84, 33, 1);
+	-moz-box-shadow: -1px 21px 5px -5px rgba(43, 84, 33, 1);
+	box-shadow: -1px 10px 5px -5px rgba(43, 84, 33, 1);
   }
   .services-hr {
 	margin-top: 15px;
 	border: 1px;
 	border-color: #2d6b2c;
 	border-style: solid;
-	min-width: 85%;
+	min-width: 65%;
 	border-radius: 5px;
   }
   @media (max-width: 970px) {
@@ -349,7 +363,8 @@ body {
 	  max-width: 250px;
 	}
 	.services>h1 { 
-		font-size: 1.15em; 
+		font-size: 1.15em;
+		width: 65%;
 	}
 	.text { 
 		font-size: 1.10em;

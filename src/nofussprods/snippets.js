@@ -14,7 +14,7 @@ const snippets = {
   snippet3: {
     image: 'familyownedpng',
     snippetHead: 'Family Owned',
-    snippet: 'As a family owned business we know how important consistency and reliability are',
+    snippet: 'As a family owned business we know how important consistency and reliability are.',
   },
 };
 

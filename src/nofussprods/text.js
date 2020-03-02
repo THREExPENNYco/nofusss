@@ -1,8 +1,8 @@
 const headerText = {
-    top: "Customization is our business",
-    middle: "Sevices We Provide",
+    top: "SERVICING YOU",
+    middle: "SERVICES WE PROVIDE",
     customization:
-      "We have years in the business. We are experts when it comes to customization. We make our business fit yours.", 
+      "Nofuss Services is a janitorial supply company servicing the state of Texas. We pride ourselves on our ability to provide personalized products to fit the needs of our customers.", 
     servicesPro: "We provide an assortment of products to fit your business's needs."
 };
 

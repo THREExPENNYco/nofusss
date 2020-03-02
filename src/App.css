@@ -323,7 +323,7 @@ body {
 	margin-top: 15px;
 	border: 1px;
 	border-color: #2D6B2C;
-	border-style: solid;
+	border-style: dashed;
 	min-width: 65%;
 	border-radius: 5px;
   }

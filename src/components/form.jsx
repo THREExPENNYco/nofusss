@@ -22,11 +22,11 @@ function Form() {
         firstname: firstName,
         lastname: lastName,
         phonenumber: phoneNumber,
-        email,
-        company,
+        email: email,
+        company: company,
         currsupplier: currSupplier,
-        location,
-        message,
+        location: location,
+        message: message,
       })
       .then((response) => {
         if (!response.data.errors) {

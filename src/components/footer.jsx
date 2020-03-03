@@ -1,12 +1,14 @@
 import React from 'react';
 
-function Footer() { 
-    return (
-        <footer className="footer">
-        <p>Nofuss Services LLC.</p>
-        <p>info@nfsservices.com</p> 
-        </footer>
-    )
+function Footer() {
+  return (
+    <footer className="footer">
+    <div className="footer-contents">
+      <p>Nofuss Services LLC.</p>
+      <p>info@nfsservices.com</p>
+    </div> 
+    </footer>
+  );
 }
 
-export default Footer; 
+export default Footer;

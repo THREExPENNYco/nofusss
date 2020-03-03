@@ -149,7 +149,7 @@ function Form() {
       ) : (
         <div className="thankyou">
           <h1>{`Thank You, ${firstName}`}</h1>
-          <h3>We will be with you shortly</h3>
+          <h3>We will be with you shortly.</h3>
         </div>
       )}
     </div>

@@ -233,6 +233,7 @@ body {
 	margin-left: auto;
 	font-size: large;
 	border-radius: 5px; 
+	
   }
   .category-items {
 	font-size: 14px;
@@ -251,16 +252,14 @@ body {
 	margin-bottom: 0px;
 	font-family: "Roboto";
 	font-weight: 300;
-	letter-spacing: 0.045em;
   }
   .thankyou > h3 {
 	margin-top: 1px;
 	font-family: "Roboto";
 	font-weight: 400;
-	letter-spacing: 0.045em;
   }
   .warning {
-	font-size: 10px;
+	font-size: 11px;
 	color: red;
   }
   .example {
@@ -275,10 +274,11 @@ body {
 	text-align: center; 
 	padding-top: 25px; 
   }
-
-  footer > p { 
-	margin-bottom: 0;
-	margin-top: 0; 
+  .footer-contents { 
+	padding-bottom: 20px; 
+  }
+  .footer-contents > p { 
+	  margin: 0; 
   }
   .snippet-images {
 	height: 125px;
@@ -356,7 +356,7 @@ body {
 	.form-container {
 	  min-height: 600px;
 	  min-width: 100px;
-	  max-width: 85%;
+	  max-width: 350px;
 	  padding-top: 10px;
 	  padding-bottom: 25px;
 	}

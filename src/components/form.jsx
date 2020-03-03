@@ -91,7 +91,6 @@ function Form() {
           </label>
           <input
             className="input-container"
-            type="tel"
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
           <label className="form-labels">

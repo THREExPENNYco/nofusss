@@ -5,12 +5,13 @@ import familyownedpng from './componentAssets/familyownedpng.png';
 import paperpng from './componentAssets/paperpng.png';
 
 function Snippet(props) {
+  let image; 
   if (props.image === 'chemicalpng') {
-    var image = chemicalpng;
+    image = chemicalpng;
   } else if (props.image === 'familyownedpng') {
-    var image = familyownedpng;
+    image = familyownedpng;
   } else if (props.image === 'paperpng') {
-    var image = paperpng;
+    image = paperpng;
   }
 
   return (
@@ -21,7 +22,7 @@ function Snippet(props) {
     >
       {(spring) => (
         <article style={spring}>
-          <img className="snippet-images" src={image} />
+          <img className="snippet-images" alt={props.image} src={image} />
           <h1 className="article-title">{props.snippetHead}</h1>
           <hr />
           <p className="article-par">{props.snippet}</p>

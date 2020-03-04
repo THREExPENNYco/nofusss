@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev:test": "webpack-dev-server --entry ./src/index.js --output nofussSite/dist/bundle.js --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1", 
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev:build": "webpack",
-    "start": "node backend/server.js", 
-    "heroku-postbuild":"cd dist && npm install"
+    "start": "node backend/server.js",
+    "heroku-postbuild": "cd dist && npm install"
   },
   "author": "Devoun Edwards",
   "license": "ISC",
@@ -34,6 +34,7 @@
     "webpack-dev-server": "^3.10.2"
   },
   "dependencies": {
+    "@sendgrid/mail": "^6.5.3",
     "aos": "^2.3.4",
     "axios": "^0.19.2",
     "cors": "^2.8.5",

@@ -29,7 +29,7 @@ app.use('/', potenCustRoute);
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('dist'));
   app.get('*', (res, req) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    res.sendFile(path.resolve("dist/index.html"));
   });
 }
 

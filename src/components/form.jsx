@@ -18,7 +18,7 @@ function Form() {
   function formSubmit(e) {
     e.preventDefault();
     axios
-      .post('https://nofuss-services-app.herokuapp.com/post', {
+      .post('https://www.nfsservices.com/post', {
         firstname: firstName,
         lastname: lastName,
         phonenumber: phoneNumber,
